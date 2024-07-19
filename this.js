@@ -12,17 +12,35 @@ const objeto = {
     nombre: "Marcos",
     apellido: "Castelli",
     nombreCompleto() {
+        const { nombre, apellido } = this;//Para no tener que usar this
         console.log(this);
         console.log(objeto.nombre);
-        console.log(this.nombre);
+        console.log(this.nombre+' '+this.apellido);
+        return (nombre+' '+apellido);
         //console.log(nombre);No lo reconoce
         console.log(this);
         //==> this hace referencia al objeto
+    },
+    imprimir() {
+        console.log(this.nombreCompleto());
     }
 };
 objeto.nombreCompleto();
+objeto.imprimir();
+objeto.apodo = "Chiquito";
 
 function dameNombre() {
     console.log("Raul");
     console.log(this);  //==> this hace referencia a window
 }
+objeto.miNuevaFuncion = function () {
+    console.log('nueva funcion hace referencia ahora a window no al objeto');
+    console.log(this.nombre);
+}
+
+objeto.miNuevaFuncion();
+
+//otraConstante -->miNuevaFuncion (ahora this apunta al objeto global)
+
+const otraConstante = objeto.miNuevaFuncion;
+otraConstante();
