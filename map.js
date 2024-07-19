@@ -13,4 +13,5 @@ console.log(raiz2);
 
 const nuevo = doble.map((elem, index) => `${index}, su valor es: ${elem}`);
 
+
 console.log(nuevo);
