@@ -4,6 +4,7 @@ const objeto = {
     tipos: ['espada', 'oro', 'copa', 'palo'],
     numeros: '1,2,3,4,5,6,7,10,11,12',
     mazo: [],
+    cartasRepartidas:[],
     
     crearMazo() {
         const { tipos, numeros, mazo } = this;
@@ -16,7 +17,16 @@ const objeto = {
     },
     
     repartirUnaCarta() {
-        return this.mazo.pop();
+        const carta = this.mazo.pop();
+        this.cartasRepartidas.push(carta);
+        return carta;
+    },
+    repartirVariasCartas(numCartas) {
+        const cartas = [];
+        for (let i = 0; i < numCartas; i++){
+            cartas.push (this.repartirUnaCarta());
+        }
+        return cartas;
     },
      
 };
@@ -25,7 +35,12 @@ console.log(objeto);
 objeto.crearMazo();
 console.log(objeto.mazo);
 let carta1 = objeto.repartirUnaCarta();
-console.log(carta1);
+let carta2 = objeto.repartirUnaCarta();
+/*let carta3 = objeto.repartirUnaCarta();
+console.log(carta1);*/
+console.log(objeto.cartasRepartidas);
+console.log(objeto.repartirVariasCartas(10));
+console.log(objeto.mazo);
 
 //******************************************************/
 
