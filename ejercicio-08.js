@@ -28,11 +28,22 @@ const objeto = {
         }
         return cartas;
     },
-     
+    
+    mezclar() {
+    //const {mazo}=this; Desestructuring para no usar this
+    for (let i = this.mazo.length - 1; i > 0; i--){
+        
+        let j = Math.floor(Math.random() * (i + 1));
+        
+        [this.mazo[i], this.mazo[j]] = [this.mazo[j], this.mazo[i]];
+    }
+    
+}
 };
 
 console.log(objeto);
 objeto.crearMazo();
+objeto.mezclar();
 console.log(objeto.mazo);
 let carta1 = objeto.repartirUnaCarta();
 let carta2 = objeto.repartirUnaCarta();
