@@ -1,4 +1,6 @@
 let total = 0;
+
+/********************************************************/
 function menu() {
   let salir = false;
 
@@ -30,16 +32,19 @@ function menu() {
   return opc;
 }
 
+/****************************************************************/
+
 function listar(coche) {
   let listado = "";
   for (let coch of coche) {
     for (let prop in coch) listado += prop + ": " + coch[prop] + "\n";
   }
-
-  alert(listado + `****************\n $`);
+  total = sumaTotal(coche);
+  alert(listado + `****************\nTotal precio: ${total}`);
 
   return listado;
 }
+//******************************************************/
 
 function anadir(cars) {
   let coche1 = { marca: "", modelo: "", precio: 0 };
