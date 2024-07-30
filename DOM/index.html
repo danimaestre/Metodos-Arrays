@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1 id="titulo">Estamos aprendiendo el DOM</h1>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis quidem
+      et perspiciatis optio commodi iste dolores eveniet, eos ullam vel unde
+      doloremque veritatis ea quis minus suscipit hic reiciendis rerum.
+    </p>
+
+    <p id="texto">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit fugiat
+      eligendi recusandae necessitatibus ut repellendus eum officia. Et earum
+      necessitatibus libero eligendi beatae culpa soluta iure unde. Laborum,
+      minus cumque?
+    </p>
+    <img
+      src="https://pixabay.com/get/g589da56c0ff913a111565e810d8bbc59a8f95b63799e2c38d6ee1f8b2371958866f465ad5d0d5507748e1bcc19d286abb89f2dac1aadbb38a9fe41f235bc3b4aec3c1501ab92e1644f1bf08bd87f7740_640.jpg"
+      alt="lobo"
+      id="foto"
+    />
+
+    <script>
+      /*
+   let chTitulo=document.getElementById('titulo');
+   chTitulo.textContent="HOLA MUNDO...";
+
+    let chTexto=document.getElementById('texto');
+    chTexto.textContent='Texto cambiado';
+
+    let chimg= document.getElementById('foto');
+    chimg.src="https://th.bing.com/th/id/OIP.z6ncnPgun3jDAI5yLkrAuwHaEB?pid=ImgDet&w=133&h=72.36170212765957&c=7&dpr=1,6";
+    */
+
+      //Esto es una coleccion de objetos
+      let parrafos = document.getElementsByTagName("p");
+      console.log(parrafos[0]);//accedo un objeto de la coleccion html
+      const miArray = [...parrafos]; //Ahora puedo acceder metodos array
+      //Para recorrer una coleccion de objetos.
+      for (let parr of parrafos) {
+        console.log(parr);
+      }
+      for (let parr of parrafos) {
+        console.log(parr.textContent);
+      }
+    </script>
+  </body>
+</html>
