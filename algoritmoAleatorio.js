@@ -28,4 +28,4 @@ mezclar([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 const palabras = ['auto', 'moto', 'perro', 'gato', 'tractor'];
 [palabras[1], palabras[3]] = [palabras[3], palabras[1]];
 
-console.log(palabras);
+console.log(palabras)
